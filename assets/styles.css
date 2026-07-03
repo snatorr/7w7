@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'ComicShanns';
+    src: url('assets/fonts/ComicShannsMonoNerdFontMono-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ComicShanns';
+    src: url('assets/fonts/ComicShannsMonoNerdFontMono-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* ------------------ MAIN CONTENT SECTION -------------------*/
+
+.grid_container {
+    font-family: 'ComicShanns', monospace;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-areas:
+        "nav main aside";
+}
+
+.grid_nav {
+    grid-area: nav;
+    background-color: #f4f4f4;
+}
+
+
+.grid_main {
+    grid-area: main;
+    background-color: #fff;
+}
+
+
+.grid_aside {
+    grid-area: aside;
+    background-color: #f4f4f4;
+}
