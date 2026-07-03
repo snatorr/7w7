@@ -1,27 +1,40 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 @font-face {
     font-family: 'ComicShanns';
-    src: url('assets/fonts/ComicShannsMonoNerdFontMono-Regular.otf') format('opentype');
+    src: url('fonts/ComicShannsMonoNerdFontMono-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ComicShanns';
-    src: url('assets/fonts/ComicShannsMonoNerdFontMono-Bold.otf') format('opentype');
+    src: url('fonts/ComicShannsMonoNerdFontMono-Bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(images/back2.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 150dvh;
+    display: flex;
+    justify-content: center;
 }
 
 /* ------------------ MAIN CONTENT SECTION -------------------*/
 
 .grid_container {
     font-family: 'ComicShanns', monospace;
+    border-radius: 20px;
+    width: 85%;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 200px 1fr 200px;
@@ -29,19 +42,44 @@
         "nav main aside";
 }
 
+/*-- GRID NAV --*/
+
 .grid_nav {
     grid-area: nav;
     background-color: #f4f4f4;
+    padding: 20px;
 }
 
+/*-- GRID NAV ENDS --*/
+
+/*-- GRID MAIN --*/
 
 .grid_main {
     grid-area: main;
     background-color: #fff;
 }
 
+/*-- GRID MAIN ENDS --*/
+
+/*-- GRID ASIDE --*/
 
 .grid_aside {
     grid-area: aside;
     background-color: #f4f4f4;
 }
+
+/*-- GRID ASIDE ENDS --*/
+
+/*-- GRID DECORATION --*/
+
+.grid_nav, .grid_aside {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 
+        inset 0  0.5px 0 rgba(255, 255, 255, 0.6),
+        inset 0  -10px 20px rgba(255, 255, 255, 0.1),
+        0 8px 32px 0 rgba(0, 0, 0, 0.15);
+}
+
+/*-- GRID DECORATION ENDS --*/
