@@ -26,15 +26,33 @@ body {
     background-size: cover;
     min-height: 150dvh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    padding: 30px 0px 8px 0px;
     justify-content: center;
+    display: flex;
+}
+
+.header_logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header_logo {
+    width: auto;
 }
 
 /* ------------------ MAIN CONTENT SECTION -------------------*/
 
 .grid_container {
-    font-family: 'ComicShanns', monospace;
     border-radius: 20px;
+    overflow: hidden;
+    font-family: 'ComicShanns', monospace;
     width: 85%;
+    height: 134dvh;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 200px 1fr 200px;
@@ -46,8 +64,15 @@ body {
 
 .grid_nav {
     grid-area: nav;
-    background-color: #f4f4f4;
     padding: 20px;
+}
+
+.grid_nav-picture {
+    max-width: 100%;
+    border: 10px solid transparent;
+    border-image-source: url(borderme.gif);
+    border-image-slice: 20;
+    border-image-repeat: stretch;
 }
 
 /*-- GRID NAV ENDS --*/
@@ -65,7 +90,6 @@ body {
 
 .grid_aside {
     grid-area: aside;
-    background-color: #f4f4f4;
 }
 
 /*-- GRID ASIDE ENDS --*/
