@@ -107,3 +107,123 @@ body {
 }
 
 /*-- GRID DECORATION ENDS --*/
+
+
+.momi-paint-widget-left {
+    all: initial;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    background: #d4d0c8;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    box-shadow: 1px 1px 0px #000;
+    padding: 2px;
+    box-sizing: border-box;
+    font-family: 'Consolas', monospace;
+    margin: 20px auto 20px 0;
+    user-select: none;
+}
+.momi-paint-widget-left .paint-window-bar {
+    background: #000080;
+    padding: 3px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.momi-paint-widget-left .paint-title {
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.momi-paint-widget-left .paint-window-controls {
+    display: flex;
+    gap: 2px;
+}
+.momi-paint-widget-left .paint-btn-mini {
+    background: #d4d0c8;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #404040;
+    border-bottom: 1px solid #404040;
+    font-size: 9px;
+    padding: 0px 4px;
+    color: #000;
+    font-weight: bold;
+}
+.momi-paint-widget-left .paint-menu-bar {
+    display: flex;
+    gap: 8px;
+    padding: 3px 4px;
+    font-size: 11px;
+    color: #000;
+    border-bottom: 1px solid #808080;
+}
+.momi-paint-widget-left .clear-menu-btn {
+    color: #ff3b30;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.momi-paint-widget-left .paint-body {
+    background: #808080;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+}
+.momi-paint-widget-left canvas {
+    background: #ffffff;
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    display: block;
+    cursor: crosshair;
+    width: 100% !important;
+    height: auto;
+}
+.momi-paint-widget-left .paint-footer-palette {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background: #d4d0c8;
+    gap: 6px;
+    border-top: 1px solid #808080;
+}
+.momi-paint-widget-left .selected-indicator-box {
+    width: 28px;
+    height: 28px;
+    background: #d4d0c8;
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.momi-paint-widget-left #momiCurrentColorPreview {
+    width: 14px;
+    height: 14px;
+    border: 1px solid #000;
+}
+.momi-paint-widget-left .colors-grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    flex-grow: 1;
+}
+.momi-paint-widget-left .color-pixel {
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    border-top: 1px solid #404040;
+    border-left: 1px solid #404040;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    cursor: pointer;
+}
