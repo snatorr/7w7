@@ -1,24 +1,49 @@
-const titles = [
-    "kiero morirme hoy!!!1",
-    "EX ZETA BLOG !!",
-    ">.<"
-];
-
-let ind = 0;
-
-function changeTitle() {
-    ind = (ind + 1) % titles.length;
-    document.title = titles[ind];
-}
-
-setInterval(changeTitle, 2000);
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // ==========================================
+    // 1. ROTACIÓN DEL TÍTULO DE LA PESTAÑA
+    // ==========================================
+    const titles = [
+        "kiero morirme hoy!!!1",
+        "EX ZETA BLOG !!",
+        ">.<"
+    ];
+    let ind = 0;
+
+    function changeTitle() {
+        ind = (ind + 1) % titles.length;
+        document.title = titles[ind];
+    }
+    setInterval(changeTitle, 2000);
+
+
+    // ==========================================
+    // 2. ROTACIÓN DEL NICKNAME (.grid_nav-nickname)
+    // ==========================================
+    const nicknameElemento = document.querySelector('.grid_nav-nickname');
+    const nicknames = [
+        "BASURA",
+        "EX ZETA GAMES",
+        "SNATORR",
+        "SANTII :P",
+        "NETZEEK"
+    ];
+    let indiceNick = 0;
+
+    function cambiarNickname() {
+        // Verificamos primero que el elemento exista en el HTML para evitar errores
+        if (nicknameElemento) {
+            indiceNick = (indiceNick + 1) % nicknames.length;
+            nicknameElemento.textContent = nicknames[indiceNick];
+        }
+    }
+    // Cambia cada 4 segundos (4000ms)
+    setInterval(cambiarNickname, 1500);
+
+
+    // ==========================================
+    // 3. WIDGET DE PAINT (CALIBRADO Y RESPONSIVO)
+    // ==========================================
     const canvas = document.getElementById('momiPaintCanvasLeft');
     const ctx = canvas.getContext('2d');
     const colorPreview = document.getElementById('momiCurrentColorPreview');
@@ -44,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!painting) return;
         const rect = canvas.getBoundingClientRect();
         
-        // 1. Calculamos la escala entre el tamaño interno del canvas y el tamaño CSS real en pantalla
+        // Calculamos la escala entre el tamaño interno del canvas y el tamaño CSS real en pantalla
         const escalaX = canvas.width / rect.width;
         const escalaY = canvas.height / rect.height;
 
@@ -54,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.lineWidth = brushSize;
         ctx.strokeStyle = currentColor;
 
-        // 2. Aplicamos la escala a las coordenadas restadas
+        // Aplicamos la escala a las coordenadas restadas
         const xCalibrado = (clientX - rect.left) * escalaX;
         const yCalibrado = (clientY - rect.top) * escalaY;
 

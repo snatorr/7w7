@@ -28,6 +28,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .header {
@@ -67,12 +71,37 @@ body {
     padding: 20px;
 }
 
+.grid_nav-welcome {
+    max-width: 100%;
+    padding-bottom: 20px;
+}
+
+.grid_nav-nickname {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: #16e;
+    font-style: italic;
+}
+
 .grid_nav-picture {
     max-width: 100%;
     border: 10px solid transparent;
     border-image-source: url(borderme.gif);
     border-image-slice: 20;
     border-image-repeat: stretch;
+}
+
+.grid_nav-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.grid_nav-link-img {
+    max-width: 100%;
+    height: 25px;
 }
 
 /*-- GRID NAV ENDS --*/
