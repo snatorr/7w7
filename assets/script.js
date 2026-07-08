@@ -23,26 +23,68 @@ document.addEventListener('DOMContentLoaded', () => {
     const nicknameElemento = document.querySelector('.grid_nav-nickname');
     const nicknames = [
         "BASURA",
-        "EX ZETA GAMES",
-        "SNATORR",
-        "SANTII :P",
-        "NETZEEK"
+        "ex zeta",
+        "momi 2008",
+        "offline...",
+        "loading..."
     ];
     let indiceNick = 0;
 
     function cambiarNickname() {
-        // Verificamos primero que el elemento exista en el HTML para evitar errores
         if (nicknameElemento) {
             indiceNick = (indiceNick + 1) % nicknames.length;
             nicknameElemento.textContent = nicknames[indiceNick];
         }
     }
-    // Cambia cada 4 segundos (4000ms)
-    setInterval(cambiarNickname, 1500);
+    setInterval(cambiarNickname, 4000);
 
 
     // ==========================================
-    // 3. WIDGET DE PAINT (CALIBRADO Y RESPONSIVO)
+    // 3. ENTRADAS DEL BLOG (Tu "Base de Datos" JS)
+    // ==========================================
+    const entradas = [
+        {
+            titulo: "TODOS PUTOS XDDD",
+            fecha: "7 de julio de 2026",
+            contenido: "ola hijos de mil puta bienvenidos ami blog los odio mueranse jejeje",
+            imagen: "https://media.tenor.com/Ki9hLQ4Zl7UAAAAM/trollface-troll-face.gif",
+            // Esta entrada no tiene imagen, se muestra solo el texto
+        }
+    ];
+
+    // Buscamos el elemento <main class="grid_main">
+    const mainContenedor = document.querySelector('.grid_main');
+
+    if (mainContenedor) {
+        // Limpiamos el contenido estático de prueba que tenías antes (el Lorem Ipsum)
+        mainContenedor.innerHTML = ''; 
+
+        // Recorremos el array y creamos las entradas una por una
+        entradas.forEach(post => {
+            const articulo = document.createElement('article');
+            articulo.className = 'blog-post';
+            
+            let postHTML = `
+                <small class="post-fecha">${post.fecha}</small>
+                <h2 class="post-titulo">${post.titulo}</h2>
+                <p class="post-contenido">${post.contenido}</p>
+            `;
+            
+            // Corregido: Ahora verifica y usa 'imagen' correctamente
+            if (post.imagen) {
+                postHTML += `<img src="${post.imagen}" class="post-imagen" alt="Imagen del post">`;
+            }
+
+            postHTML += '<hr class="post-separador">';
+
+            articulo.innerHTML = postHTML;
+            mainContenedor.appendChild(articulo);
+        });
+    }
+
+
+    // ==========================================
+    // 4. WIDGET DE PAINT (CALIBRADO Y RESPONSIVO)
     // ==========================================
     const canvas = document.getElementById('momiPaintCanvasLeft');
     const ctx = canvas.getContext('2d');
@@ -69,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!painting) return;
         const rect = canvas.getBoundingClientRect();
         
-        // Calculamos la escala entre el tamaño interno del canvas y el tamaño CSS real en pantalla
         const escalaX = canvas.width / rect.width;
         const escalaY = canvas.height / rect.height;
 
@@ -79,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.lineWidth = brushSize;
         ctx.strokeStyle = currentColor;
 
-        // Aplicamos la escala a las coordenadas restadas
         const xCalibrado = (clientX - rect.left) * escalaX;
         const yCalibrado = (clientY - rect.top) * escalaY;
 

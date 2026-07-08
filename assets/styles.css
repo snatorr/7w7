@@ -256,3 +256,60 @@ body {
     border-right: 1px solid #fff;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+/* El cuadro blanco que envuelve a cada entrada */
+.blog-post {
+    background: rgba(255, 255, 255, 0.65); /* Un fondo blanco transparente tipo Windows Vista */
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Un borde brillante muy sutil */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+/* El título del post */
+.post-titulo {
+    font-size: 24px;
+    color: #1c3d5a; /* Un azul oscuro que queda lindo con la estética aero */
+    margin: 0 0 5px 0;
+}
+
+/* La fecha chiquita */
+.post-fecha {
+    color: #555555;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* El texto de lo que escribas */
+.post-contenido {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #222222;
+}
+
+/* La imagen o GIF que subas adentro del post */
+.post-imagen {
+    display: block;
+    max-width: 100%; /* Para que nunca se deforme ni se salga del cuadro */
+    height: auto;
+    margin: 15px auto; /* Centrada */
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* La línea que divide al final de la entrada */
+.post-separador {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.15), rgba(0,0,0,0));
+    margin-top: 20px;
+}
